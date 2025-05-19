@@ -16,6 +16,6 @@ public class VistaController {
     @GetMapping("/libros/vista")
     public String vistaLibros(Model model) {
         model.addAttribute("libros", libroService.obtenerTodos());
-        return "libros"; // Va a buscar libros.html en templates
+        return "libros";
     }
 }

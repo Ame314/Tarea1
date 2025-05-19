@@ -34,4 +34,5 @@ public class LibroController {
     public void eliminarLibro(@PathVariable Long id) {
         libroService.eliminarLibro(id);
     }
+    
 }
