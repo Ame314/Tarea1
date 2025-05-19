@@ -1,25 +1,33 @@
 package com.amelie.productos.model;
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document(collection = "libros")
 public class Libro {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private String id;
     private String titulo;
     private String autor;
     private double precio;
 
-    // Getters y setters
+    // Constructores, getters y setters
 
-    public Long getId() {
+    public Libro() {
+    }
+
+    public Libro(String titulo, String autor, double precio) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.precio = precio;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

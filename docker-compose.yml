@@ -14,5 +14,22 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  mongo:
+    image: mongo
+    container_name: mongo_productos
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+
+  redis:
+    image: redis:alpine
+    container_name: redis_productos
+    restart: always
+    ports:
+      - "6379:6379"
+
 volumes:
   pgdata:
+  mongodata:

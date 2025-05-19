@@ -12,9 +12,10 @@ public class VistaController {
     @Autowired
     private LibroService libroService;
 
-    @GetMapping("/libros/vista")
-    public String vistaLibros(Model model) {
+    @GetMapping("/vista")
+    public String vistaLibros(org.springframework.ui.Model model) {
         model.addAttribute("libros", libroService.obtenerTodos());
-        return "libros"; // va a buscar libros.html en templates
+        return "libros"; // busca libros.html en src/main/resources/templates
     }
+
 }
