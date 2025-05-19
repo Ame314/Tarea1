@@ -4,14 +4,11 @@ import com.amelie.productos.model.Libro;
 import com.amelie.productos.service.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.ui.Model;
-
-
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/libros")
+@RequestMapping("/libros")
 @CrossOrigin(origins = "*")
 public class LibroController {
 
@@ -38,4 +35,3 @@ public class LibroController {
         libroService.eliminarLibro(id);
     }
 }
-

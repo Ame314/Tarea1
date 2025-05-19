@@ -5,6 +5,7 @@ import com.amelie.productos.repository.LibroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,7 +16,9 @@ public class LibroService {
     private LibroRepository libroRepository;
 
     public List<Libro> obtenerTodos() {
-        return libroRepository.findAll();
+        List<Libro> libros = new ArrayList<>();
+        libroRepository.findAll().forEach(libros::add);
+        return libros;
     }
 
     public Optional<Libro> obtenerPorId(Long id) {

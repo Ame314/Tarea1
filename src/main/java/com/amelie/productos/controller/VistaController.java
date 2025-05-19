@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
+
 public class VistaController {
 
     @Autowired
@@ -15,6 +16,6 @@ public class VistaController {
     @GetMapping("/libros/vista")
     public String vistaLibros(Model model) {
         model.addAttribute("libros", libroService.obtenerTodos());
-        return "libros"; // va a buscar libros.html en templates
+        return "libros"; // Va a buscar libros.html en templates
     }
 }

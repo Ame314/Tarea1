@@ -1,12 +1,14 @@
 package com.amelie.productos.model;
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
 
-@Entity
-public class Libro {
+import java.io.Serializable;
+
+@RedisHash("Libro")
+public class Libro implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String titulo;
